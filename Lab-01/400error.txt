@@ -1,0 +1,43 @@
+egwebber@cloyster:~/cmsc12300/examples/data_analysis/src/cs123/mrjob$ python kmeans.py -r emr --k 2 ../../../data/5clusters.txt
+Traceback (most recent call last):
+  File "kmeans.py", line 41, in <module>
+    choose_centroids_runner.run()
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/runner.py", line 464, in run
+    self._run()
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 803, in _run
+    self._launch_emr_job()
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 1517, in _launch_emr_job
+    steps = self._build_steps()
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 1382, in _build_steps
+    return [self._build_step(n) for n in xrange(self._num_steps())]
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 1388, in _build_step
+    return self._build_streaming_step(step_num)
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 1404, in _build_streaming_step
+    streaming_step_kwargs.update(self._cache_kwargs())
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 1465, in _cache_kwargs
+    version = self.get_hadoop_version()
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 2504, in get_hadoop_version
+    self._describe_jobflow().hadoopversion)
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/emr.py", line 2491, in _describe_jobflow
+    return emr_conn.describe_jobflow(self._emr_job_flow_id)
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/retry.py", line 148, in call_and_maybe_retry
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/mrjob/retry.py", line 70, in call_and_maybe_retry
+    result = getattr(alternative, name)(*args, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/boto/emr/connection.py", line 104, in describe_jobflow
+    jobflows = self.describe_jobflows(jobflow_ids=[jobflow_id])
+  File "/usr/local/lib/python2.7/dist-packages/boto/emr/connection.py", line 137, in describe_jobflows
+    return self.get_list('DescribeJobFlows', params, [('member', JobFlow)])
+  File "/usr/local/lib/python2.7/dist-packages/boto/connection.py", line 1186, in get_list
+    raise self.ResponseError(response.status, response.reason, body)
+boto.exception.EmrResponseError: EmrResponseError: 400 Bad Request
+<ErrorResponse xmlns="http://elasticmapreduce.amazonaws.com/doc/2009-03-31">
+  <Error>
+    <Type>Sender</Type>
+    <Code>ValidationError</Code>
+    <Message>DescribeJobFlows API is deprecated. Please refer to http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeJobFlows.html for further information.</Message>
+  </Error>
+  <RequestId>8d890638-0670-11e6-94a5-451c63e53542</RequestId>
+</ErrorResponse>
+
+egwebber@cloyster:~/cmsc12300/examples/data_analysis/src/cs123/mrjob$ 
