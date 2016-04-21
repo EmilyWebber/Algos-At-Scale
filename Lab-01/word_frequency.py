@@ -6,7 +6,9 @@ WORD_RE = re.compile(r"[\w']+")
 class MRWordFreqCount(MRJob):
 
 	def mapper(self, _, line):
+
 		for word in WORD_RE.findall(line):
+			print ("calling mapper")
 			yield word.lower(), 1
 
 	def combiner(self, word, counts):

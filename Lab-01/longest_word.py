@@ -23,6 +23,7 @@ class MRMaxLenWord(MRJob):
     # no yield!
 
   def reducer_final(self):
+    print ("now this one should really only get executed once")
     yield self.max_at, self.max_len
 
 if __name__ == '__main__':

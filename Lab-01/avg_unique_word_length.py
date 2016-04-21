@@ -14,9 +14,11 @@ class MRAvgUniqWordLen(MRJob):
     yield word, None
   
   def reducer_find_words(self, word, _):
+    #print ("this is the reducer that's finding words")
     yield None, len(word)
 
   def reducer_average_len(self, _, lens):
+    print ("I'm hoping this only gets executed once")
     lens_list = list(lens)
     yield None, sum(lens_list)/len(lens_list)
 
