@@ -1,8 +1,8 @@
 import csv
 
-FILE = "/home/egwebber/cmsc12300/PA-01/Data/WhiteHouse.csv"
+FILE = "/home/egwebber/egwebber/PA-01/Data/WhiteHouse.csv"
 
-OUT = "/home/egwebber/cmsc12300/PA-01/Output/task-one-sanity-check.txt"
+OUT = "/home/egwebber/egwebber/PA-01/Output/task-one-sanity-check.txt"
 
 FIRST = 1
 LAST = 0
@@ -36,10 +36,8 @@ def read():
 				name = get_visitor_name(row)
 
 				if name not in at_least_ten:
-					if name not in counts:
-						counts[name] = 1
-					else:
-						counts[name] += 1
+					counts[name] = counts.setdefault(name, 1) + 1
+
 					if counts[name] >= 10:
 						at_least_ten.append(name)
 

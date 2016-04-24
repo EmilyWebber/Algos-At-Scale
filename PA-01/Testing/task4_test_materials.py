@@ -3,9 +3,9 @@ import task1_test_materials as one
 import task2_test_materials as two
 
 
-FILE = "/home/egwebber/cmsc12300/PA-01/Data/WhiteHouse.csv"
+FILE = "/home/egwebber/egwebber/PA-01/Data/WhiteHouse.csv"
 
-OUT = "/home/egwebber/cmsc12300/PA-01/Output/task-four-sanity-check.txt"
+OUT = "/home/egwebber/egwebber/PA-01/Output/task-four-sanity-check.txt"
 
 
 

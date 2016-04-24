@@ -1,8 +1,8 @@
 import csv
 import task1_test_materials as one
 
-FILE = "/home/egwebber/cmsc12300/PA-01/Data/WhiteHouse.csv"
-OUT = "/home/egwebber/cmsc12300/PA-01/Output/task-three-sanity-check.txt"
+FILE = "/home/egwebber/egwebber/PA-01/Data/WhiteHouse.csv"
+OUT = "/home/egwebber/egwebber/PA-01/Output/task-three-sanity-check.txt"
 
 def read():
 

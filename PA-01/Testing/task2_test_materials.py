@@ -1,9 +1,9 @@
 import csv
 import task1_test_materials as one
 
-FILE = "/home/egwebber/cmsc12300/PA-01/Data/WhiteHouse.csv"
+FILE = "/home/egwebber/egwebber/PA-01/Data/WhiteHouse.csv"
 
-OUT = "/home/egwebber/cmsc12300/PA-01/Output/task-two-sanity-check.txt"
+OUT = "/home/egwebber/egwebber/PA-01/Output/task-two-sanity-check.txt"
 
 LAST = 19
 FIRST = 20
@@ -39,10 +39,7 @@ def read():
 
 					# if top ten has less than ten elements
 					if len(list(top_ten.keys())) < 10:
-						if name not in top_ten:
-							top_ten[name] = 1
-						else:
-							top_ten[name] += 1
+						top_ten[name] = top_ten.setdefault(name, 1) + 1
 
 					else:
 
