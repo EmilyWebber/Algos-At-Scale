@@ -89,9 +89,9 @@ struct point {
 ```
 
 ## Another example of strings in C
-	- cannot use single and double quotes interchangably
-	- single quotes for characters
-	- double quotes for strings
+- cannot use single and double quotes interchangably
+- single quotes for characters
+- double quotes for strings
 ```
 int main( ...put in your inputs here.. ){
 
